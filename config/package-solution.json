@@ -1,0 +1,41 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "Intranet Redirect Solution",
+    "id": "7ed2342c-e148-4f6e-8d87-9f61662a0a37",
+    "version": "1.2.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": ""
+    },
+    "features": [
+      {
+        "title": "Intranet Redirect Solution",
+        "description": "Deploys a custom action that enables URL redirects based on a source mapping list.",
+        "id": "9c86a93c-a871-4db1-9883-df10bb2b781a",
+        "version": "1.2.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ],
+          "elementFiles": [
+            "error.aspx",
+            "schema.xml"
+          ],
+          "upgradeActions": [
+            "upgrade.xml"
+          ]
+        }
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-intranet-redirect.sppkg"
+  }
+}

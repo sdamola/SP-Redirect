@@ -1,0 +1,14 @@
+steps:
+  - task: Npm@1
+    displayName: "compile redirect file"
+    inputs:
+      command: "custom"
+      customCommand: "run build-redirect"
+
+  - task: Gulp@1
+    displayName: "gulp bundle"
+    inputs:
+      gulpFile: "gulpfile.js"
+      targets: "bundle"
+      arguments: "--ship"
+      enableCodeCoverage: false

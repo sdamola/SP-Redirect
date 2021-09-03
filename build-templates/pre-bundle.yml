@@ -1,0 +1,23 @@
+steps:
+  - task: UseNode@1
+    displayName: "Use Node 14.17.0"
+    inputs:
+      version: "14.17.0"
+
+  - script: npx yarn install
+    displayName: 'yarn install'
+
+  - task: Gulp@1
+    displayName: "gulp clean"
+    inputs:
+      gulpFile: "gulpfile.js"
+      targets: "clean"
+      enableCodeCoverage: false
+
+  - task: Gulp@1
+    displayName: "gulp version-sync"
+    inputs:
+      gulpFile: "gulpfile.js"
+      targets: "version-sync"
+      arguments: "--buildNumber $(Build.BuildNumber)"
+      enableCodeCoverage: false

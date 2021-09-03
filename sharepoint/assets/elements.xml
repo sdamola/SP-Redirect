@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <!-- SPFx Extension -->
+    <CustomAction Title="SpFxIntranetRedirect" Location="ClientSideExtension.ApplicationCustomizer" ClientSideComponentId="be4625c3-8c0e-4977-ae05-8a651d6bbe84" ClientSideComponentProperties="{}" />
+
+    <!-- Upload files to the Site Pages library under the /redirect folder -->
+    <Module Name="Assets" Url="SitePages">
+        <File Path="error.aspx" Url="redirect/error.aspx" Type="GhostableInLibrary" ReplaceContent="TRUE" />
+    </Module>
+
+    <!-- Whitelist feature -->
+    <Field ID="{493E48C5-15E4-4D9A-9795-AF48AC87A76E}" Name="WhitelistUser" DisplayName="Whitelist User" Type="User" UserSelectionMode="0" Required="TRUE" Group="SPFx Columns" />
+    <ContentType ID="0x0100D31E637AFD594088A07C8AB826B0260D" Name="Whitelist User" Group="SPFx Content Types" Overwrite="TRUE">
+        <FieldRefs>
+            <FieldRef ID="{493E48C5-15E4-4D9A-9795-AF48AC87A76E}" />
+        </FieldRefs>
+    </ContentType>
+    <ListInstance CustomSchema="schema.xml" FeatureId="00bfea71-de22-43b2-a848-c05709900100" TemplateType="100" Url="Lists/RedirectWhitelist" OnQuickLaunch="FALSE" Title="Redirect Whitelist" Description="This list identifies test users who will receive URL redirects">
+    </ListInstance>
+</Elements>

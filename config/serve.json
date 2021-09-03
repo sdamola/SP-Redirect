@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/core-build/serve.schema.json",
+  "port": 4321,
+  "https": true,
+  "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://bahdev.sharepoint.com",
+      "customActions": {
+        "be4625c3-8c0e-4977-ae05-8a651d6bbe84": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {}
+        }
+      }
+    },
+    "spFxIntranetRedirect": {
+      "pageUrl": "https://bahdev.sharepoint.com",
+      "customActions": {
+        "be4625c3-8c0e-4977-ae05-8a651d6bbe84": {
+          "location": "ClientSideExtension.ApplicationCustomizer",
+          "properties": {}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="SpFxIntranetRedirect"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="be4625c3-8c0e-4977-ae05-8a651d6bbe84"
+        Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
+    </ClientSideComponentInstance>
+</Elements>

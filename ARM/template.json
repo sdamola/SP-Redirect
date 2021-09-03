@@ -1,0 +1,39 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appinsights_name": {
+            "type": "string"
+        },
+        "bah_environment": {
+            "type": "string"
+        },
+        "workspace_resource_id":{
+          "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "name": "[parameters('appinsights_name')]",
+            "type": "Microsoft.Insights/components",
+            "apiVersion": "2020-02-02-preview",
+            "location": "[resourceGroup().location]",
+            "kind": "web",
+            "tags": {
+                "project_name": "Zone",
+                "project_environment": "[parameters('bah_environment')]",
+                "creator": "597470",
+                "application_name": "Intranet Redirect",
+                "is_group": "Collaboration Solutions",
+                "application_tier": "Application Insights"
+            },
+            "properties": {
+                "Application_Type": "web",
+                "RetentionInDays": 365,
+                "publicNetworkAccessForIngestion": "Enabled",
+                "publicNetworkAccessForQuery": "Enabled",
+                "WorkspaceResourceId": "[parameters('workspace_resource_id')]"
+            }
+        }
+    ]
+}
